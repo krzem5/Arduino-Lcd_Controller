@@ -59,35 +59,16 @@ void LCD::init(){
 		digitalWrite(this->_en_p,HIGH);
 		delayMicroseconds(1);
 		digitalWrite(this->_en_p,LOW);
-		delayMicroseconds(100);
-		delayMicroseconds(4500);
-		digitalWrite(this->_d_pl[0],0x01);
-		digitalWrite(this->_d_pl[1],0x01);
-		digitalWrite(this->_d_pl[2],0x00);
-		digitalWrite(this->_d_pl[3],0x00);
-		digitalWrite(this->_en_p,LOW);
-		delayMicroseconds(1);
+		delayMicroseconds(4601);
 		digitalWrite(this->_en_p,HIGH);
 		delayMicroseconds(1);
 		digitalWrite(this->_en_p,LOW);
-		delayMicroseconds(100);
-		delayMicroseconds(4500);
-		digitalWrite(this->_d_pl[0],0x01);
-		digitalWrite(this->_d_pl[1],0x01);
-		digitalWrite(this->_d_pl[2],0x00);
-		digitalWrite(this->_d_pl[3],0x00);
-		digitalWrite(this->_en_p,LOW);
-		delayMicroseconds(1);
+		delayMicroseconds(4601);
 		digitalWrite(this->_en_p,HIGH);
 		delayMicroseconds(1);
 		digitalWrite(this->_en_p,LOW);
-		delayMicroseconds(100);
-		delayMicroseconds(150);
+		delayMicroseconds(250);
 		digitalWrite(this->_d_pl[0],0x00);
-		digitalWrite(this->_d_pl[1],0x01);
-		digitalWrite(this->_d_pl[2],0x00);
-		digitalWrite(this->_d_pl[3],0x00);
-		digitalWrite(this->_en_p,LOW);
 		delayMicroseconds(1);
 		digitalWrite(this->_en_p,HIGH);
 		delayMicroseconds(1);
@@ -138,7 +119,6 @@ void LCD::move(uint8_t x,uint8_t y){
 void LCD::write(uint8_t b){
 	this->_data(HIGH,b);
 }
-
 
 
 
@@ -216,7 +196,7 @@ void LCD::_data(uint8_t m,uint8_t v){
 	}
 	if (this->_b4==true){
 		for (int i=0;i<4;i++){
-			digitalWrite(this->_d_pl[i],(v>>4>>i)&0x01);
+			digitalWrite(this->_d_pl[i],(v>>(i+4))&0x01);
 		}
 		digitalWrite(this->_en_p,LOW);
 		delayMicroseconds(1);

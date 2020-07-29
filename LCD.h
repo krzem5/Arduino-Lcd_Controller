@@ -1,8 +1,3 @@
-#include <Arduino.h>
-#include <string.h>
-
-
-
 #define LCD_CLEARDISPLAY 0x01
 #define LCD_RETURNHOME 0x02
 #define LCD_ENTRYMODESET 0x04
@@ -39,6 +34,7 @@ class LCD{
 		void clear();
 		void home();
 		void move(uint8_t x,uint8_t y);
+		// void custom(uint8_t l,uint8_t* c);
 		void write(uint8_t b);
 		void write(char c);
 		void write(short s);

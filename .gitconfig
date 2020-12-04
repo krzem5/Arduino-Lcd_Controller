@@ -5,6 +5,7 @@ desc=Arduino-Lcd_Controller
 public=true
 homepage=
 license=mit
+remote=
 
 file.readme=.\README.md
 file.gitignore=.\.gitignore

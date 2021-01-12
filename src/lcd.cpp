@@ -1,5 +1,5 @@
-#include <Arduino.h>
-#include <LCD.h>
+#include <arduino.h>
+#include <include/lcd.h>
 
 
 
